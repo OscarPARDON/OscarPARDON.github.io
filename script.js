@@ -143,9 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialiser le carrousel de compétences
   new SkillsCarousel();
 
-  // Initialiser le gestionnaire de langue
-  new LanguageManager();
-
   // Animation smooth scroll pour les liens de navigation (hero et sticky)
   const allNavLinks = document.querySelectorAll('.nav-link, .sticky-nav-link');
   allNavLinks.forEach(link => {
@@ -203,62 +200,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', requestTick);
 });
 
-// Système de traduction
-class LanguageManager {
-  constructor() {
-    this.currentLanguage = 'en';
-    this.toggleButton = document.getElementById('languageToggle');
-    this.languageText = document.getElementById('languageText');
-    this.init();
-  }
-
-  init() {
-    if (!this.toggleButton || !this.languageText) return;
-    
-    // Charger la langue sauvegardée
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage && savedLanguage !== this.currentLanguage) {
-      this.switchLanguage();
-    }
-    
-    // Ajouter l'événement de clic
-    this.toggleButton.addEventListener('click', () => {
-      this.switchLanguage();
-    });
-  }
-
-  switchLanguage() {
-    this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
-    
-    // Mettre à jour le texte du bouton
-    this.languageText.textContent = this.currentLanguage === 'fr' ? 'EN' : 'FR';
-    
-    // Mettre à jour tous les textes
-    this.updateTexts();
-    
-    // Sauvegarder la préférence
-    localStorage.setItem('language', this.currentLanguage);
-  }
-
-  updateTexts() {
-    const elements = document.querySelectorAll('[data-fr][data-en]');
-    
-    elements.forEach(element => {
-      const text = element.getAttribute(`data-${this.currentLanguage}`);
-      if (text) {
-        element.textContent = text;
-      }
-    });
-
-    // Mettre à jour les placeholders
-    const placeholderElements = document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]');
-    placeholderElements.forEach(element => {
-      const placeholder = element.getAttribute(`data-placeholder-${this.currentLanguage}`);
-      if (placeholder) {
-        element.placeholder = placeholder;
-      }
-    });
-
-  }
-}
 
