@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Oscar Pardon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="projets.css" />
+    <link rel="icon" type="image/x-icon" href="../content/images/logo.webp">
+    <script type="module" src="../script.js"></script>
+  </head>
+  <body>
+    <!-- Navbar sticky toujours visible -->
+  <nav class="sticky-nav visible">
+    <div class="sticky-nav-content">
+      <a href="../index.html" class="sticky-nav-link">Accueil</a>
+      <a href="../index.html#presentation" class="sticky-nav-link">Présentation</a>
+      <a href="../index.html#competences" class="sticky-nav-link">Compétences</a>
+      <a href="../index.html#projets" class="sticky-nav-link">Projets</a>
+      <a href="../index.html#contact" class="sticky-nav-link">Contact</a>
+      <a href="https://github.com/OscarPARDON/GSB_APP_WEB" class="navbar-github-button" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">
+        <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" 
+                transform="translate(-84, -7399)" fill-rule="evenodd"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+    <main class="article-main">
+      <div class="article-container">
+        <article class="project-article">
+          <!-- Titre principal -->
+          <header class="article-header">
+            <h1 class="article-title">GSB Recrutement</h1>
+            <p class="article-disclaimer">
+              <em>Remarque : Cette application ne reflète pas mes compétences actuelles, mais constitue plutôt un marqueur de progression.</em>
+            </p>
+          </header>
+
+          <!-- Section Contexte -->
+          <section class="article-section">
+            <h2 class="section-heading">Contexte</h2>
+            <p class="section-text">
+              Ce projet a été réalisé dans le cadre de l'évaluation du BTS SIO SLAM . Il s'agissait de concevoir une application Web répondant à un besoin d'une 
+              entreprise fictive nommée Galaxy Swiss Bourdin (GSB). En plus d'être en elle même évaluée, l'application devait servir de support pour l'épreuve de 
+              développement (E6). Dans ce cadre, j'ai décidé de créer une application de gestion des recrutements..
+            </p>
+          </section>
+
+          <!-- Section À propos de l'application -->
+          <section class="article-section">
+            <h2 class="section-heading">À propos de l'application</h2>
+            
+            <!-- Caractéristiques techniques -->
+            <div class="subsection">
+              <h3 class="subsection-heading">Caractéristiques techniques</h3>
+              <ul class="tech-list">
+                <li><strong>Architecture :</strong> MVT</li>
+                <li><strong>Framework :</strong> Django</li>
+                <li><strong>Backend :</strong> Python</li>
+                <li><strong>Base de données :</strong> MySQL</li>
+                <li><strong>Frontend :</strong> HTML, CSS, Bootstrap, JavaScript</li>
+                <li><strong>Mailing :</strong> Django Mail</li>
+                <li><strong>Tests :</strong> Django Testcase</li>
+              </ul>
+            </div>
+
+            <!-- Image placeholder -->
+            <div class="image-placeholder">
+              <img src="../content/images/gsb_illu1.webp" alt="Schéma de l'application">
+            </div>
+
+            <!-- Fonctionnalités principales -->
+            <div class="subsection">
+              <h3 class="subsection-heading">Fonctionnalités principales</h3>
+              <ul class="features-list">
+                <li>Consultation des offres et possibilité de postuler pour les candidats</li>
+                <li>Espace personnel sécurisé pour les candidats</li>
+                <li>Gestion des offres et des candidatures pour les employés</li>
+                <li>Mails d'alerte sur l'évolution des candidatures</li>
+                <li>Chat candidat / employé avec module de gestion de RDV</li>
+                <li>Archives des candidatures</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Section Sécurité -->
+          <section class="article-section">
+            <h2 class="section-heading">Sécurité</h2>
+            
+            <div class="security-cards-grid">
+              <!-- Card Protection contre les injections -->
+              <div class="security-card">
+                <h3 class="security-card-title">Protection contre les injections</h3>
+                <ul class="security-features-list">
+                  <li class="feature-success">Protection contre les injections SQL</li>
+                  <li class="feature-success">Protection contre les injections XSS</li>
+                </ul>
+              </div>
+
+              <!-- Card Rôles et Cloisonnement -->
+              <div class="security-card">
+                <h3 class="security-card-title">Rôles et Cloisonnement</h3>
+                <ul class="security-features-list">
+                  <li class="feature-success">3 Divisions (Publique, Employé, Candidat)</li>
+                  <li class="feature-success">Jusqu'à 3 Niveaux d'accès</li>
+                </ul>
+              </div>
+
+              <!-- Card Authentification -->
+              <div class="security-card">
+                <h3 class="security-card-title">Authentification</h3>
+                <ul class="security-features-list">
+                  <li class="feature-success">Espace Sécurisé Candidat</li>
+                  <li class="feature-success">Espace Sécurisé Employé</li>
+                  <li class="feature-success">Authentification sécurisée</li>
+                </ul>
+              </div>
+
+              <!-- Card Sécurisation des formulaires -->
+              <div class="security-card">
+                <h3 class="security-card-title">Sécurisation des formulaires</h3>
+                <ul class="security-features-list">
+                  <li class="feature-success">Jetons CSRF</li>
+                  <li class="feature-success">Validation des données</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Image placeholder 2 -->
+          <div class="image-placeholder">
+            <img src="../content/images/gsb_illu2.webp" alt="Illustration Chat application">
+          </div>
+
+          <!-- Section Ce que ce projet m'a appris -->
+          <section class="article-section">
+            <h2 class="section-heading">Ce que le projet m'a appris</h2>
+            
+            <div class="learning-section">
+              <!-- Colonne des réussites -->
+              <div class="learning-column success">
+                <h3 class="learning-column-title">Mes réussites</h3>
+                <ul class="success-list">
+                  <li>Me familiariser avec un framework Web</li>
+                  <li>Réaliser des tests unitaires</li>
+                  <li>Renforcer ma compréhension des architectures d'applications</li>
+                </ul>
+              </div>
+              
+              <!-- Colonne des erreurs -->
+              <div class="learning-column errors">
+                <h3 class="learning-column-title">Mes erreurs</h3>
+                <ul class="errors-list">
+                  <li>Peu d'optimisation des données</li>
+                  <li>Manque de gestion de projet</li>
+                  <li>Manque de certaines mesures de sécurité</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Bouton GitHub en bas -->
+          <div class="github-section">
+            <a href="https://github.com/OscarPARDON/GSB_APP_WEB" class="github-main-button" target="_blank" rel="noopener noreferrer">
+              <span class="github-text">Voir le code sur GitHub</span>
+              <div class="github-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 19C5 20.5 5 16.5 3 16M15 21V17.5C15 16.5 15.1 16.1 14.5 15.5C17.3 15.2 20 14.1 20 9.5C19.9 8.5 19.6 7.5 19 6.5C19.2 5.5 19.2 4.4 19 3.5C19 3.5 18 3 16 4.5C13.4 4 10.6 4 8 4.5C6 3 5 3.5 5 3.5C4.8 4.4 4.8 5.5 5 6.5C4.4 7.5 4.1 8.5 4 9.5C4 14.1 6.7 15.2 9.5 15.5C8.9 16.1 9 16.5 9 17.5V21" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

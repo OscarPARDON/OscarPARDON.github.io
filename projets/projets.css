@@ -1,0 +1,642 @@
+/* Styles spécifiques pour la page Contrathèque */
+
+/* Layout principal */
+.article-main {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  padding-top: 60px; /* Espace pour la navbar sticky */
+}
+
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.project-article {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header de l'article */
+.article-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.article-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #E8E3F3;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(232, 227, 243, 0.3);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #E8E3F3, #9D7BEA, #00FFD1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.article-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #9D7BEA, #00FFD1);
+  border-radius: 2px;
+}
+
+.article-disclaimer {
+  font-size: 1.1rem;
+  color: #9D7BEA;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(157, 123, 234, 0.2);
+}
+
+/* Sections */
+.article-section {
+  margin-bottom: 3rem;
+}
+
+.article-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #E8E3F3;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(157, 123, 234, 0.3);
+  letter-spacing: -0.01em;
+}
+
+.subsection {
+  margin-bottom: 2rem;
+}
+
+.subsection:last-child {
+  margin-bottom: 0;
+}
+
+.subsection-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #C4B5FD;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+/* Texte */
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #B8B3C7;
+  margin-bottom: 1rem;
+  text-align: justify;
+  letter-spacing: -0.01em;
+}
+
+.section-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Listes */
+.contact-list,
+.tech-list,
+.environment-list,
+.features-list,
+.roles-list,
+.security-list,
+.learning-list,
+.mistakes-list {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.contact-list li,
+.environment-list li,
+.features-list li,
+.learning-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.contact-list li::before,
+.environment-list li::before,
+.features-list li::before,
+.learning-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #9D7BEA;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Listes techniques avec puces spéciales */
+.tech-list li,
+.roles-list li,
+.security-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.tech-list li::before,
+.roles-list li::before,
+.security-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #00FFD1;
+  font-weight: bold;
+}
+
+/* Liste des erreurs avec style spécial */
+.mistakes-list li {
+  background: rgba(255, 107, 107, 0.05);
+  border: 1px solid rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.mistakes-list li strong {
+  color: #FF6B6B;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Section apprentissages avec deux colonnes */
+.learning-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.learning-column {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.learning-column.success {
+  border-color: rgba(0, 255, 209, 0.2);
+  background: rgba(0, 255, 209, 0.03);
+}
+
+.learning-column.errors {
+  border-color: rgba(255, 107, 107, 0.2);
+  background: rgba(255, 107, 107, 0.03);
+}
+
+.learning-column-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.learning-column.success .learning-column-title {
+  color: #00FFD1;
+  text-shadow: 0 0 20px rgba(0, 255, 209, 0.3);
+}
+
+.learning-column.errors .learning-column-title {
+  color: #FF6B6B;
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.success-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.success-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.success-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00FFD1;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.errors-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.errors-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.errors-list li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #FF6B6B;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+/* Section sécurité avec cards */
+.security-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.security-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.security-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #9D7BEA, #00FFD1, #7C3AED);
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.security-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(157, 123, 234, 0.3);
+}
+
+.security-card:hover::before {
+  transform: scaleX(1);
+}
+
+.security-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #E8E3F3;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.security-features-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.security-features-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.security-features-list li:last-child {
+  margin-bottom: 0;
+}
+
+.feature-success::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00FFD1;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.feature-danger::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #FF6B6B;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Liens */
+.article-link {
+  color: #9D7BEA;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(157, 123, 234, 0.3);
+}
+
+.article-link::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #9D7BEA, #7C3AED);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.article-link:hover {
+  color: #C4B5FD;
+  text-shadow: 0 0 15px rgba(157, 123, 234, 0.3);
+  transform: translateY(-1px);
+}
+
+.article-link:hover::before {
+  width: 100%;
+}
+
+/* Placeholders d'images */
+.image-placeholder {
+  width: 80%;
+  height: 300px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou contain, selon le besoin */
+}
+
+
+/* Bouton GitHub dans la navbar - Styles corrigés */
+.navbar-github-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Changé de flex-end à center */
+  width: 32px;
+  height: 32px;
+  background: rgba(157, 123, 234, 0.1);
+  border: 1px solid rgba(157, 123, 234, 0.3);
+  border-radius: 50%;
+  color: #9D7BEA;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Ajout de propriétés pour s'assurer que le bouton est cliquable */
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.navbar-github-button:hover {
+  background: rgba(157, 123, 234, 0.2);
+  border-color: rgba(157, 123, 234, 0.5);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(157, 123, 234, 0.3);
+  color: #C4B5FD; /* Couleur hover pour le SVG */
+}
+
+.navbar-github-button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor; /* S'assurer que le SVG utilise la couleur du parent */
+}
+
+.image-placeholder:hover {
+  border-color: rgba(157, 123, 234, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-text {
+  font-size: 1.1rem;
+  color: #B8B3C7;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .article-container {
+    padding: 2rem 1rem;
+  }
+  
+  .project-article {
+    padding: 2rem;
+  }
+  
+  .article-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .article-section {
+    margin-bottom: 2rem;
+  }
+  
+  .subsection {
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-text {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .contact-list li,
+  .environment-list li,
+  .features-list li,
+  .learning-list li,
+  .tech-list li,
+  .roles-list li,
+  .security-list li {
+    font-size: 1rem;
+  }
+  
+  .mistakes-list li {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .image-placeholder {
+    height: 200px;
+    width: 90%;
+  }
+  
+  .learning-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .learning-column {
+    padding: 1.2rem;
+  }
+  
+  .security-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .security-card {
+    padding: 1.2rem;
+  }
+  
+  .security-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .security-features-list li {
+    font-size: 0.95rem;
+  }
+  
+  .navbar-github-button {
+    width: 26px;
+    height: 26px;
+    margin-left: 0.3rem;
+  }
+  
+  .navbar-github-button svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-container {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .project-article {
+    padding: 1.5rem;
+  }
+  
+  .section-text {
+    font-size: 0.95rem;
+  }
+  
+  .contact-list li,
+  .environment-list li,
+  .features-list li,
+  .learning-list li,
+  .tech-list li,
+  .roles-list li,
+  .security-list li {
+    font-size: 0.95rem;
+  }
+  
+  .mistakes-list li {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .image-placeholder {
+    height: 150px;
+    width: 95%;
+  }
+  
+  .placeholder-text {
+    font-size: 1rem;
+  }
+  
+  .learning-column {
+    padding: 1rem;
+  }
+  
+  .learning-column-title {
+    font-size: 1.2rem;
+  }
+  
+  .security-card {
+    padding: 1rem;
+  }
+  
+  .security-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .security-features-list li {
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+  }
+  
+  .success-list li,
+  .errors-list li {
+    font-size: 0.9rem;
+  }
+
+  .github-button-header {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .github-button-header svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .github-main-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .github-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}
