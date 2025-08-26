@@ -30,7 +30,7 @@
   border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-.article-title {
+.contratheque, .gsbapp .article-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   color: #E8E3F3;
@@ -44,7 +44,7 @@
   position: relative;
 }
 
-.article-title::after {
+.contratheque, .gsbapp .article-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -53,6 +53,32 @@
   width: 100px;
   height: 3px;
   background: linear-gradient(90deg, #9D7BEA, #00FFD1);
+  border-radius: 2px;
+}
+
+.helpdesk .article-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #E8E3F3;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(232, 227, 243, 0.3);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #E8E3F3, #4ECDC4, #45B7D1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.helpdesk .article-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #4ECDC4, #45B7D1);
   border-radius: 2px;
 }
 
@@ -82,6 +108,11 @@
   border-bottom: 2px solid rgba(157, 123, 234, 0.3);
   letter-spacing: -0.01em;
 }
+  
+  /* Styles spécifiques pour Helpdesk */
+  .helpdesk .section-heading {
+    border-bottom: 2px solid rgba(78, 205, 196, 0.3);
+  }
 
 .subsection {
   margin-bottom: 2rem;
@@ -190,7 +221,35 @@
   display: block;
   margin-bottom: 0.5rem;
 }
+ /* Liste des enjeux (Helpdesk) */
+ .enjeux-list {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
 
+.enjeux-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #B8B3C7;
+}
+
+.enjeux-list li::before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  color: #4ECDC4;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.enjeux-list li strong {
+  color: #4ECDC4;
+  font-weight: 600;
+}
 /* Section apprentissages avec deux colonnes */
 .learning-section {
   display: grid;
@@ -369,6 +428,124 @@
   font-size: 1.2rem;
 }
 
+  /* Grille des domaines d'intervention (Helpdesk) */
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .domain-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .domain-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4ECDC4, #45B7D1, #5A67D8);
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .domain-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(78, 205, 196, 0.3);
+  }
+  
+  .domain-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .domain-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #4ECDC4;
+    transition: all 0.3s ease;
+  }
+  
+  .domain-card:hover .domain-icon {
+    transform: scale(1.1);
+    color: #45B7D1;
+  }
+  
+  .domain-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E8E3F3;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Grille des compétences développées (Helpdesk) */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .skill-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4ECDC4, #45B7D1, #5A67D8, #667EEA);
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(78, 205, 196, 0.3);
+  }
+  
+  .skill-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .skill-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4ECDC4;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    text-shadow: 0 0 20px rgba(78, 205, 196, 0.2);
+  }
+  
+  .skill-card-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #B8B3C7;
+    letter-spacing: -0.01em;
+  }
+
 /* Liens */
 .article-link {
   color: #9D7BEA;
@@ -468,6 +645,19 @@
   opacity: 0.7;
 }
 
+  /* Styles spécifiques pour Helpdesk */
+  .helpdesk .navbar-github-button {
+    background: rgba(78, 205, 196, 0.1);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    color: #4ECDC4;
+  }
+  
+  .helpdesk .navbar-github-button:hover {
+    background: rgba(78, 205, 196, 0.2);
+    border-color: rgba(78, 205, 196, 0.5);
+    box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3);
+  }
+
 /* Responsive */
 @media (max-width: 768px) {
   .article-container {
@@ -502,7 +692,8 @@
   .learning-list li,
   .tech-list li,
   .roles-list li,
-  .security-list li {
+  .security-list li,
+  .enjeux-list li {
     font-size: 1rem;
   }
   
@@ -541,7 +732,40 @@
   .security-features-list li {
     font-size: 0.95rem;
   }
+  .domains-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
   
+  .domain-card {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .domain-icon {
+    font-size: 2.5rem;
+  }
+  
+  .domain-title {
+    font-size: 1.1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .skill-card {
+    padding: 1.2rem;
+  }
+  
+  .skill-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .skill-card-description {
+    font-size: 0.95rem;
+  }
+
   .navbar-github-button {
     width: 26px;
     height: 26px;
@@ -573,7 +797,8 @@
   .learning-list li,
   .tech-list li,
   .roles-list li,
-  .security-list li {
+  .security-list li,
+  .enjeux-list li {
     font-size: 0.95rem;
   }
   
@@ -638,5 +863,38 @@
   .github-section {
     margin-top: 2rem;
     padding-top: 1.5rem;
+
+  }
+
+  .domains-grid {
+    gap: 1rem;
+  }
+  
+  .domain-card {
+    padding: 1.2rem 1rem;
+  }
+  
+  .domain-icon {
+    font-size: 2.2rem;
+  }
+  
+  .domain-title {
+    font-size: 1rem;
+  }
+  
+  .skills-grid {
+    gap: 1rem;
+  }
+  
+  .skill-card {
+    padding: 1rem;
+  }
+  
+  .skill-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .skill-card-description {
+    font-size: 0.9rem;
   }
 }
