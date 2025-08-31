@@ -144,25 +144,24 @@ document.addEventListener('DOMContentLoaded', () => {
   new SkillsCarousel();
 
   // Animation smooth scroll pour les liens de navigation (hero et sticky)
-  const allNavLinks = document.querySelectorAll('.nav-link, .sticky-nav-link');
-  allNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      
-      // Si c'est un lien vers une section, faire un smooth scroll
-      if (targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          // Pour la section présentation, on veut la centrer parfaitement
+    const allNavLinks = document.querySelectorAll('.nav-link, .sticky-nav-link');
+    allNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        
+        // SEULEMENT empêcher le comportement par défaut pour les ancres
+        if (targetId.startsWith('#')) {
+          e.preventDefault();
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Votre code de smooth scroll...
             const windowHeight = window.innerHeight;
             const stickyNavHeight = 35;
             
-            // Calculer la position pour centrer la section
             const elementPosition = targetElement.getBoundingClientRect().top;
             const elementHeight = targetElement.offsetHeight;
             
-            // Centrer la section en tenant compte de la navbar sticky
             const centerOffset = (windowHeight - stickyNavHeight - elementHeight) / 2;
             const targetPosition = elementPosition + window.pageYOffset - stickyNavHeight - Math.max(centerOffset, 0);
             
@@ -170,10 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
               top: targetPosition,
               behavior: 'smooth'
             });
+          }
         }
-      }
+        // Pour les autres liens (../index.html, etc.), laisser le comportement normal
+      });
     });
-  });
 
   // Effet de parallaxe léger sur le fond animé
   let ticking = false;
